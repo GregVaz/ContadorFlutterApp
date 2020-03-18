@@ -1,24 +1,33 @@
 import 'package:flutter/material.dart';
+ 
+class ContadorPage extends StatefulWidget {
 
-class HomePage extends StatelessWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return _ContadorPageState();
+  }
 
-  //Instancia de la clase Style
-  final estiloTexto = new TextStyle(fontSize: 25);
+}
 
-  final count = 0;
+class _ContadorPageState extends State<ContadorPage> {
+
+    //Instancia de la clase Style
+  final _estiloTexto = new TextStyle(fontSize: 25);
+
+  int _count = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Bienvenido'),
+        title: Text('Stateful'),
         centerTitle: true,
       ),
       body: Center(
         child: Column(
           children: <Widget>[
-            Text( 'Numero de clicks:', style: estiloTexto),
-            Text( '$count', style: estiloTexto),
+            Text( 'Numero de clicks:', style: _estiloTexto),
+            Text( '$_count', style: _estiloTexto),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         )
@@ -27,7 +36,9 @@ class HomePage extends StatelessWidget{
         // onPressed: null, // Es como un disabled en true
         child: Icon( Icons.add ),
         onPressed: () {
-          // count++;
+          _count++;
+
+          setState(() {});
         },
       ),
     );

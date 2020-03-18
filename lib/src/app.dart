@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:contador/src/pages/home_page.dart';
+import 'package:contador/src/pages/contador_page.dart';
+// import 'package:contador/src/pages/home_page.dart';
 
 //Creando un widget
 class MyApp extends StatelessWidget{
@@ -10,8 +11,9 @@ class MyApp extends StatelessWidget{
   Widget build( context ) { //El; context tiene el arbol de widgets, conoce quien es su padre, nieto, bisnieto.
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Center(
-        child: HomePage()
+        child: ContadorPage()
       )
     ); //
 
