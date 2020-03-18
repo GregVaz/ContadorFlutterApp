@@ -21,6 +21,13 @@ class HomePage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
         )
       ),
+      floatingActionButton: FloatingActionButton(
+        // onPressed: null, // Es como un disabled en true
+        child: Icon( Icons.add ),
+        onPressed: () {
+          print('Hola mundo');
+        },
+      ),
     );
   }
 }
