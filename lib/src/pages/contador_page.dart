@@ -42,12 +42,24 @@ class _ContadorPageState extends State<ContadorPage> {
       mainAxisAlignment: MainAxisAlignment.end,
       children: <Widget>[
         SizedBox(width: 30.0),
-        FloatingActionButton( child: Icon(Icons.exposure_zero), onPressed: () {},),
+        FloatingActionButton( child: Icon(Icons.exposure_zero), onPressed: _puestaCero ),
         Expanded(child: SizedBox()), //expande el tama;o al otro lado
-        FloatingActionButton( child: Icon(Icons.remove), onPressed: () {},),
+        FloatingActionButton( child: Icon(Icons.remove), onPressed: _restar ),
         SizedBox( width: 5.0 ),
-        FloatingActionButton( child: Icon(Icons.add), onPressed: () {},),
+        FloatingActionButton( child: Icon(Icons.add), onPressed: _agregar ),
       ],
     );
+  }
+
+  void _agregar() {
+    setState(() => _count++);
+  }
+
+  void _restar() {
+    setState(() => _count--);
+  }
+
+  void _puestaCero() {
+    setState(() => _count = 0);
   }
 }
