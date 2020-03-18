@@ -32,15 +32,22 @@ class _ContadorPageState extends State<ContadorPage> {
           mainAxisAlignment: MainAxisAlignment.center,
         )
       ),
-      floatingActionButton: FloatingActionButton(
-        // onPressed: null, // Es como un disabled en true
-        child: Icon( Icons.add ),
-        onPressed: () {
-          _count++;
+      floatingActionButton: _crearBotones()
+    );
+  }
 
-          setState(() {});
-        },
-      ),
+  Widget _crearBotones() {
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0),
+        FloatingActionButton( child: Icon(Icons.exposure_zero), onPressed: () {},),
+        Expanded(child: SizedBox()), //expande el tama;o al otro lado
+        FloatingActionButton( child: Icon(Icons.remove), onPressed: () {},),
+        SizedBox( width: 5.0 ),
+        FloatingActionButton( child: Icon(Icons.add), onPressed: () {},),
+      ],
     );
   }
 }
